@@ -14,7 +14,7 @@ namespace AuthenticationUtility
         {
             UriString = "https://usncax1aos.cloud.onebox.dynamics.com/",
             UserName = "tusr1@TAEOfficial.ccsctp.net",
-            Password = "Pass1Word",
+            Password = "PASSWORD",
             ActiveDirectoryResource = "https://usncax1aos.cloud.onebox.dynamics.com",
             ActiveDirectoryTenant = "https://login.windows-ppe.net/TAEOfficial.ccsctp.net",
             ActiveDirectoryClientAppId = "d8a9a121-b463-41f6-a86c-041272bdb340",
