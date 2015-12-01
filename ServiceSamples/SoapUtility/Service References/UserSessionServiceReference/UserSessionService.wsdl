@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/dynamics/2011/01/services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/dynamics/2011/01/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.microsoft.com/dynamics/2011/01/services/Imports">
+      <xsd:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd2" namespace="http://schemas.microsoft.com/dynamics/2011/01/services" />
+      <xsd:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd3" namespace="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" />
+      <xsd:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application" />
+      <xsd:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+      <xsd:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.KernelInterop" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ApplyTimeZone">
+    <wsdl:part name="parameters" element="tns:ApplyTimeZone" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTimeZone_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTimeZoneResponse">
+    <wsdl:part name="parameters" element="tns:ApplyTimeZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApplyTimeZoneResponse_Headers">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q2:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="UserSessionService_ApplyTimeZone_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q3:Fault" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessRights">
+    <wsdl:part name="parameters" element="tns:GetAccessRights" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessRights_Headers">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q4:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessRightsResponse">
+    <wsdl:part name="parameters" element="tns:GetAccessRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessRightsResponse_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q5:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="UserSessionService_GetAccessRights_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q6:Fault" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKey">
+    <wsdl:part name="parameters" element="tns:GetPartitionKey" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKey_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKeyResponse">
+    <wsdl:part name="parameters" element="tns:GetPartitionKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKeyResponse_Headers">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q8:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="UserSessionService_GetPartitionKey_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q9:Fault" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKeysForUser">
+    <wsdl:part name="parameters" element="tns:GetPartitionKeysForUser" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKeysForUser_Headers">
+    <wsdl:part xmlns:q10="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q10:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKeysForUserResponse">
+    <wsdl:part name="parameters" element="tns:GetPartitionKeysForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPartitionKeysForUserResponse_Headers">
+    <wsdl:part xmlns:q11="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q11:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="UserSessionService_GetPartitionKeysForUser_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q12:Fault" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSessionInfo">
+    <wsdl:part name="parameters" element="tns:GetUserSessionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSessionInfo_Headers">
+    <wsdl:part xmlns:q13="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q13:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSessionInfoResponse">
+    <wsdl:part name="parameters" element="tns:GetUserSessionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSessionInfoResponse_Headers">
+    <wsdl:part xmlns:q14="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q14:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="UserSessionService_GetUserSessionInfo_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q15:Fault" />
+  </wsdl:message>
+  <wsdl:message name="IsSinglePartitionSystem">
+    <wsdl:part name="parameters" element="tns:IsSinglePartitionSystem" />
+  </wsdl:message>
+  <wsdl:message name="IsSinglePartitionSystem_Headers">
+    <wsdl:part xmlns:q16="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q16:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="IsSinglePartitionSystemResponse">
+    <wsdl:part name="parameters" element="tns:IsSinglePartitionSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSinglePartitionSystemResponse_Headers">
+    <wsdl:part xmlns:q17="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q17:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="UserSessionService_IsSinglePartitionSystem_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q18:Fault" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeZone">
+    <wsdl:part name="parameters" element="tns:RemoveTimeZone" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeZone_Headers">
+    <wsdl:part xmlns:q19="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q19:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeZoneResponse">
+    <wsdl:part name="parameters" element="tns:RemoveTimeZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTimeZoneResponse_Headers">
+    <wsdl:part xmlns:q20="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q20:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="UserSessionService_RemoveTimeZone_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q21:Fault" />
+  </wsdl:message>
+  <wsdl:portType name="UserSessionService">
+    <wsdl:operation name="ApplyTimeZone">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/ApplyTimeZone" name="ApplyTimeZone" message="tns:ApplyTimeZone" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/ApplyTimeZoneResponse" name="ApplyTimeZoneResponse" message="tns:ApplyTimeZoneResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/Fault" name="SoapServiceFaultFault" message="tns:UserSessionService_ApplyTimeZone_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessRights">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetAccessRights" name="GetAccessRights" message="tns:GetAccessRights" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetAccessRightsResponse" name="GetAccessRightsResponse" message="tns:GetAccessRightsResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/Fault" name="SoapServiceFaultFault" message="tns:UserSessionService_GetAccessRights_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartitionKey">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetPartitionKey" name="GetPartitionKey" message="tns:GetPartitionKey" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetPartitionKeyResponse" name="GetPartitionKeyResponse" message="tns:GetPartitionKeyResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/Fault" name="SoapServiceFaultFault" message="tns:UserSessionService_GetPartitionKey_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartitionKeysForUser">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetPartitionKeysForUser" name="GetPartitionKeysForUser" message="tns:GetPartitionKeysForUser" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetPartitionKeysForUserResponse" name="GetPartitionKeysForUserResponse" message="tns:GetPartitionKeysForUserResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/Fault" name="SoapServiceFaultFault" message="tns:UserSessionService_GetPartitionKeysForUser_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSessionInfo">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetUserSessionInfo" name="GetUserSessionInfo" message="tns:GetUserSessionInfo" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/GetUserSessionInfoResponse" name="GetUserSessionInfoResponse" message="tns:GetUserSessionInfoResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/Fault" name="SoapServiceFaultFault" message="tns:UserSessionService_GetUserSessionInfo_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSinglePartitionSystem">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/IsSinglePartitionSystem" name="IsSinglePartitionSystem" message="tns:IsSinglePartitionSystem" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/IsSinglePartitionSystemResponse" name="IsSinglePartitionSystemResponse" message="tns:IsSinglePartitionSystemResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/Fault" name="SoapServiceFaultFault" message="tns:UserSessionService_IsSinglePartitionSystem_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTimeZone">
+      <wsdl:input wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/RemoveTimeZone" name="RemoveTimeZone" message="tns:RemoveTimeZone" />
+      <wsdl:output wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/RemoveTimeZoneResponse" name="RemoveTimeZoneResponse" message="tns:RemoveTimeZoneResponse" />
+      <wsdl:fault wsam:Action="http://schemas.microsoft.com/dynamics/2011/01/services/UserSessionService/Fault" name="SoapServiceFaultFault" message="tns:UserSessionService_RemoveTimeZone_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

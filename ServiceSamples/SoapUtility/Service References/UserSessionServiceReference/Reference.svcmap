@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4e79c75d-9f2e-47c5-a584-06a65e88f194" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserSessionService.xsd" MetadataType="Schema" ID="01079d8a-53d2-4706-8673-83f5cd973325" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd0" />
+    <MetadataFile FileName="UserSessionService1.xsd" MetadataType="Schema" ID="f9312c2a-5de4-4308-a3a7-f2857c0bf697" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd3" />
+    <MetadataFile FileName="UserSessionService2.xsd" MetadataType="Schema" ID="6c130bf1-0787-4243-94e9-3b64b6274ae3" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd2" />
+    <MetadataFile FileName="UserSessionService3.xsd" MetadataType="Schema" ID="080f5dcc-ff4c-40f1-bf28-f495d521cc35" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd6" />
+    <MetadataFile FileName="UserSessionService4.xsd" MetadataType="Schema" ID="f4cd96a5-16fd-4b7b-9539-8916fea2dbe5" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd5" />
+    <MetadataFile FileName="UserSessionService5.xsd" MetadataType="Schema" ID="30d5d1d1-2574-47cf-bf9f-d8917c71242b" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd4" />
+    <MetadataFile FileName="UserSessionService.wsdl" MetadataType="Wsdl" ID="45d61a07-06ce-4294-911b-d4f0788109e0" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?wsdl=wsdl0" />
+    <MetadataFile FileName="UserSessionService1.wsdl" MetadataType="Wsdl" ID="b854ea34-e710-477f-84d2-2d6f67c7c08f" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?wsdl" />
+    <MetadataFile FileName="UserSessionService6.xsd" MetadataType="Schema" ID="e73bef14-602d-4393-89cc-b194d4d3c6e4" SourceId="1" SourceUrl="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://usncax1aos.cloud.onebox.dynamics.com/services/UserSessionService?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CallContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartitionKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CallContext" nillable="true" type="tns:CallContext" />
+  <xs:complexType name="Infolog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Entries" nillable="true" type="tns:ArrayOfInfologEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Infolog" nillable="true" type="tns:Infolog" />
+  <xs:complexType name="ArrayOfInfologEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfologEntry" nillable="true" type="tns:InfologEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfologEntry" nillable="true" type="tns:ArrayOfInfologEntry" />
+  <xs:complexType name="InfologEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:InfologType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfologEntry" nillable="true" type="tns:InfologEntry" />
+  <xs:simpleType name="InfologType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Info" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InfologType" nillable="true" type="tns:InfologType" />
+  <xs:complexType name="Fault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fault" nillable="true" type="tns:Fault" />
+</xs:schema>
