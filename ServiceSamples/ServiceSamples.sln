@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapConsoleApplication", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataUtility", "ODataUtility\ODataUtility.csproj", "{74D74B3E-9B32-4E5D-9639-80988F58696C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConsoleApplication", "D:\Enlistments\RainFnd\Source\Platform\Integration\Services\Samples\Public\JsonConsoleApplication\JsonConsoleApplication.csproj", "{003F5F9E-658D-4C90-B185-6726A5CF41FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConsoleApplication", "JsonConsoleApplication\JsonConsoleApplication.csproj", "{003F5F9E-658D-4C90-B185-6726A5CF41FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
