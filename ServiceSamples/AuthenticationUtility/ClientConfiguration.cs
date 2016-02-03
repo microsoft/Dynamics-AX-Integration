@@ -13,11 +13,15 @@ namespace AuthenticationUtility
         public static ClientConfiguration OneBox = new ClientConfiguration()
         {
             UriString = "https://paulwuax7-ctp8aos.cloudax.dynamics.com/",
+
+            #region user credential
             UserName = "qipengwu@pwax7.onmicrosoft.com",
             Password = "Pass1Word",
+            #endregion
+
             ActiveDirectoryResource = "https://paulwuax7-ctp8aos.cloudax.dynamics.com",
             ActiveDirectoryTenant = "https://login.windows.net/pwax7.onmicrosoft.com",
-            ActiveDirectoryClientAppId = "210435a7-7254-460d-b339-6a53d724cf76",
+            ActiveDirectoryClientAppId = "f00ced34-2591-41f4-b22d-5005000f05be"            
         };
 
         public string UriString { get; set; }

@@ -31,7 +31,7 @@ namespace ODataConsoleApplication
             {
                 Console.WriteLine("FMCustomer name: {0}", fmcust.FirstName);
             }
-            FleetCustomer fleetCustomer = FleetCustomer.CreateFleetCustomer("123456", "Paul",11111,"Wu");
+            FleetCustomer fleetCustomer = FleetCustomer.CreateFleetCustomer("123456", "Paul1",11111,"Wu");
 
             try
             {
@@ -46,10 +46,6 @@ namespace ODataConsoleApplication
                     "An error occurred when saving changes.", ex);
             }
             
-            foreach (var fmrental in context.FleetRentals.AsEnumerable())
-            {
-                Console.WriteLine("FMRental name: {0}", fmrental.CustomerFirstName);
-            }
             Console.ReadLine();
         }
     }
