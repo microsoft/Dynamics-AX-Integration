@@ -14,7 +14,7 @@ namespace AuthenticationUtility
         {
             UriString = "https://paulwuax7-ctp8aos.cloudax.dynamics.com/",
 
-            #region user credential
+            #region
             UserName = "qipengwu@pwax7.onmicrosoft.com",
             Password = "Pass1Word",
             #endregion

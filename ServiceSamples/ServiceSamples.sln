@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationUtility", "AuthenticationUtility\AuthenticationUtility.csproj", "{195ED9B3-92AD-417E-B20A-6438DD0E0B55}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataUtility", "ODataUtility\ODataUtility.csproj", "{74D74B3E-9B32-4E5D-9639-80988F58696C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConsoleApplication", "JsonConsoleApplication\JsonConsoleApplication.csproj", "{003F5F9E-658D-4C90-B185-6726A5CF41FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{29443EB0-AD0B-4365-9C27-39C86D7221FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29443EB0-AD0B-4365-9C27-39C86D7221FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29443EB0-AD0B-4365-9C27-39C86D7221FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29443EB0-AD0B-4365-9C27-39C86D7221FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29443EB0-AD0B-4365-9C27-39C86D7221FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +72,6 @@ Global
 		{71CAD5F3-B055-4BDC-A77F-5B5009E9D7C3} = {D09E6460-3148-4A92-8D6A-2C478E119F0E}
 		{74D74B3E-9B32-4E5D-9639-80988F58696C} = {8B249783-ED3B-4990-BF1E-7C163B3670E0}
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC} = {D09E6460-3148-4A92-8D6A-2C478E119F0E}
+		{29443EB0-AD0B-4365-9C27-39C86D7221FD} = {D09E6460-3148-4A92-8D6A-2C478E119F0E}
 	EndGlobalSection
 EndGlobal

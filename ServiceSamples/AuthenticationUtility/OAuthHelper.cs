@@ -61,5 +61,27 @@ namespace AuthenticationUtility
             // Create and get JWT token
             return authenticationResult.CreateAuthorizationHeader();
         }
+
+        public static string GetAuthenticationHeaderWithKey()
+        {
+            string clientId = "91837a0e-b419-472b-b7f4-f4a4c84f0bf1";
+            string clientSecret = "fk3KOqaXYi1v3QdJZzYfRsO+BO7rZFEh6kivNYb8yPk=";
+            string aadTenant = ClientConfiguration.Default.ActiveDirectoryTenant;
+            string aadClientAppId = ClientConfiguration.Default.ActiveDirectoryClientAppId;
+            string aadResource = ClientConfiguration.Default.ActiveDirectoryResource;
+
+            AuthenticationContext authenticationContext = new AuthenticationContext(aadTenant);
+
+            // OAuth through username and password.
+            string username = ClientConfiguration.Default.UserName;
+            string password = ClientConfiguration.Default.Password;
+
+            // Get token object
+            ClientCredential clientCredential = new ClientCredential(clientId, clientSecret);
+            AuthenticationResult authenticationResult = authenticationContext.AcquireToken(aadResource, clientCredential);
+
+            // Create and get JWT token
+            return authenticationResult.CreateAuthorizationHeader();
+        }
     }
 }
