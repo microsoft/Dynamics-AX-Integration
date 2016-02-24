@@ -18,8 +18,8 @@ namespace OAuthXppConsoleApplication
             
             request.Method = "POST";
 
-            string fileId = "{D121B70B-F2A4-467D-833D-A1AB7C997232}";
-            string jsonText = string.Format("{{\"fileId\":\"{0}\"}}", fileId);
+            string fileId = "{4FEA26D0-315F-471F-9D35-C25816562B50}";
+            string jsonText = string.Format("{{\"fileId\":\"{0}\", \"ContainerName\":\"teststorage\"}}", fileId);
 
             byte[] buffer = Encoding.ASCII.GetBytes(jsonText);
             request.ContentLength = buffer.Length;
