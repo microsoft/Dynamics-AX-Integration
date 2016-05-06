@@ -72,7 +72,7 @@
       <Project>{74d74b3e-9b32-4e5d-9639-80988f58696c}</Project>
       <Name>ODataUtility</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Repos\Dynamics-AX-Integration\ServiceSamples\AuthenticationUtility\AuthenticationUtility.csproj">
+    <ProjectReference Include="..\AuthenticationUtility\AuthenticationUtility.csproj">
       <Project>{195ed9b3-92ad-417e-b20a-6438dd0e0b55}</Project>
       <Name>AuthenticationUtility</Name>
     </ProjectReference>

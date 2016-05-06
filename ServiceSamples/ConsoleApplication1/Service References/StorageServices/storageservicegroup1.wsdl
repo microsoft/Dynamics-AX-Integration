@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://paulwuax7-ctp8aos.cloudax.dynamics.com/soap/services/storageservicegroup?xsd=xsd2" namespace="http://tempuri.org" />
+      <xsd:import schemaLocation="https://paulwuax7-ctp8aos.cloudax.dynamics.com/soap/services/storageservicegroup?xsd=xsd3" namespace="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" />
+      <xsd:import schemaLocation="https://paulwuax7-ctp8aos.cloudax.dynamics.com/soap/services/storageservicegroup?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://paulwuax7-ctp8aos.cloudax.dynamics.com/soap/services/storageservicegroup?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://paulwuax7-ctp8aos.cloudax.dynamics.com/soap/services/storageservicegroup?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application" />
+      <xsd:import schemaLocation="https://paulwuax7-ctp8aos.cloudax.dynamics.com/soap/services/storageservicegroup?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+      <xsd:import schemaLocation="https://paulwuax7-ctp8aos.cloudax.dynamics.com/soap/services/storageservicegroup?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.KernelInterop" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DownloadFile">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFile_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileResponse">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileResponse_Headers">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q2:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="StorageServices_DownloadFile_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q3:Fault" />
+  </wsdl:message>
+  <wsdl:message name="DequeueFile">
+    <wsdl:part name="parameters" element="tns:DequeueFile" />
+  </wsdl:message>
+  <wsdl:message name="DequeueFile_Headers">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q4:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="DequeueFileResponse">
+    <wsdl:part name="parameters" element="tns:DequeueFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DequeueFileResponse_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q5:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="StorageServices_DequeueFile_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q6:Fault" />
+  </wsdl:message>
+  <wsdl:message name="Ack">
+    <wsdl:part name="parameters" element="tns:Ack" />
+  </wsdl:message>
+  <wsdl:message name="Ack_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="AckResponse">
+    <wsdl:part name="parameters" element="tns:AckResponse" />
+  </wsdl:message>
+  <wsdl:message name="AckResponse_Headers">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q8:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="StorageServices_Ack_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q9:Fault" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueSize">
+    <wsdl:part name="parameters" element="tns:GetQueueSize" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueSize_Headers">
+    <wsdl:part xmlns:q10="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="callContext" element="q10:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueSizeResponse">
+    <wsdl:part name="parameters" element="tns:GetQueueSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueSizeResponse_Headers">
+    <wsdl:part xmlns:q11="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="infolog" element="q11:Infolog" />
+  </wsdl:message>
+  <wsdl:message name="StorageServices_GetQueueSize_SoapServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.microsoft.com/dynamics/2013/01/datacontracts" name="detail" element="q12:Fault" />
+  </wsdl:message>
+  <wsdl:portType name="StorageServices">
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsam:Action="http://tempuri.org/StorageServices/DownloadFile" name="DownloadFile" message="tns:DownloadFile" />
+      <wsdl:output wsam:Action="http://tempuri.org/StorageServices/DownloadFileResponse" name="DownloadFileResponse" message="tns:DownloadFileResponse" />
+      <wsdl:fault wsam:Action="http://tempuri.org/StorageServices/Fault" name="SoapServiceFaultFault" message="tns:StorageServices_DownloadFile_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DequeueFile">
+      <wsdl:input wsam:Action="http://tempuri.org/StorageServices/DequeueFile" name="DequeueFile" message="tns:DequeueFile" />
+      <wsdl:output wsam:Action="http://tempuri.org/StorageServices/DequeueFileResponse" name="DequeueFileResponse" message="tns:DequeueFileResponse" />
+      <wsdl:fault wsam:Action="http://tempuri.org/StorageServices/Fault" name="SoapServiceFaultFault" message="tns:StorageServices_DequeueFile_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ack">
+      <wsdl:input wsam:Action="http://tempuri.org/StorageServices/Ack" name="Ack" message="tns:Ack" />
+      <wsdl:output wsam:Action="http://tempuri.org/StorageServices/AckResponse" name="AckResponse" message="tns:AckResponse" />
+      <wsdl:fault wsam:Action="http://tempuri.org/StorageServices/Fault" name="SoapServiceFaultFault" message="tns:StorageServices_Ack_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueSize">
+      <wsdl:input wsam:Action="http://tempuri.org/StorageServices/GetQueueSize" name="GetQueueSize" message="tns:GetQueueSize" />
+      <wsdl:output wsam:Action="http://tempuri.org/StorageServices/GetQueueSizeResponse" name="GetQueueSizeResponse" message="tns:GetQueueSizeResponse" />
+      <wsdl:fault wsam:Action="http://tempuri.org/StorageServices/Fault" name="SoapServiceFaultFault" message="tns:StorageServices_GetQueueSize_SoapServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

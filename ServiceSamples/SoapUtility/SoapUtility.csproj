@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Service References\StorageServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UserSessionServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -55,6 +60,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\StorageServices\SoapUtility.StorageServices.DownloadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StorageServices\SoapUtility.StorageServices.Infolog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StorageServices\storageservicegroup.wsdl" />
+    <None Include="Service References\StorageServices\storageservicegroup.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StorageServices\storageservicegroup1.wsdl" />
+    <None Include="Service References\StorageServices\storageservicegroup1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StorageServices\storageservicegroup2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StorageServices\storageservicegroup3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StorageServices\storageservicegroup4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserSessionServiceReference\SoapUtility.UserSessionServiceReference.AccessRight.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -110,6 +138,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\StorageServices\" />
     <WCFMetadataStorage Include="Service References\UserSessionServiceReference\" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +149,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\UserSessionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StorageServices\storageservicegroup.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StorageServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StorageServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StorageServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

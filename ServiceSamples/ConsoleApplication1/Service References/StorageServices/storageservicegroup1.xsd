@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.KernelInterop" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.KernelInterop" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ProxyBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ProxyBase" nillable="true" type="tns:ProxyBase" />
+</xs:schema>
