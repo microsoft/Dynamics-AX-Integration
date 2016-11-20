@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="JsonTests.cs" />
     <Compile Include="ODataTests.cs" />
+    <Compile Include="ServiceGroup1Tests.cs" />
     <Compile Include="SoapTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="ServiceContractProject.axpp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
