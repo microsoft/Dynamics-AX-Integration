@@ -31,7 +31,8 @@ namespace AuthenticationUtility
             string password = ClientConfiguration.Default.Password;
 
             // Get token object
-            AuthenticationResult authenticationResult = authenticationContext.AcquireToken(aadResource, aadClientAppId, new UserCredential(username, password));
+            var userCredential = new UserPasswordCredential(username, password);
+            AuthenticationResult authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, aadClientAppId, userCredential).Result;
 
             // Create and get JWT token
             return authenticationResult.CreateAuthorizationHeader();
