@@ -12,12 +12,12 @@ namespace AuthenticationUtility
 
         public static ClientConfiguration OneBox = new ClientConfiguration()
         {
-            UriString = "https://usnconeboxax1aos.cloud.onebox.dynamics.com/",
-            UserName = "tusr1@TAEOfficial.ccsctp.net",
+            UriString = "https://typeUriHere/",
+            UserName = "typeUserNameHere",
             Password = "PASSWORD",
-            ActiveDirectoryResource = "https://usnconeboxax1aos.cloud.onebox.dynamics.com",
-            ActiveDirectoryTenant = "https://login.windows-ppe.net/TAEOfficial.ccsctp.net",
-            ActiveDirectoryClientAppId = "d8a9a121-b463-41f6-a86c-041272bdb340",
+            ActiveDirectoryResource = "https://typeUriHere",
+            ActiveDirectoryTenant = "https://typeADTenantUriHere",
+            ActiveDirectoryClientAppId = "typeGuidHere",
         };
 
         public string UriString { get; set; }
