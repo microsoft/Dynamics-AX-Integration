@@ -3,6 +3,7 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace RecurringIntegrationApp
 {
@@ -21,6 +22,10 @@ namespace RecurringIntegrationApp
         /// <returns></returns>
         public async Task<HttpResponseMessage> SendPostRequestAsync(Uri uri, Stream bodyStream, string externalCorrelationHeaderValue = null)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls |
+                SecurityProtocolType.Tls11 |
+                SecurityProtocolType.Tls12;
+
             using (HttpClientHandler handler = new HttpClientHandler() { UseCookies = false })
             {
                 using (HttpClient httpClient = new HttpClient(handler))
@@ -57,6 +62,10 @@ namespace RecurringIntegrationApp
         /// <returns>Task of type HttpResponseMessage</returns>
         public async Task<HttpResponseMessage> GetRequestAsync(Uri uri)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls |
+                SecurityProtocolType.Tls11 |
+                SecurityProtocolType.Tls12;
+
             HttpResponseMessage responseMessage;
 
             using (HttpClientHandler handler = new HttpClientHandler() { UseCookies = false })
