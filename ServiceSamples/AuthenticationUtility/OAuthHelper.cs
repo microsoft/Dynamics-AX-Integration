@@ -18,21 +18,31 @@ namespace AuthenticationUtility
         /// Retrieves an authentication header from the service.
         /// </summary>
         /// <returns>The authentication header for the Web API call.</returns>
-        public static string GetAuthenticationHeader()
+        public static string GetAuthenticationHeader(bool useWebAppAuthentication = false)
         {
             string aadTenant = ClientConfiguration.Default.ActiveDirectoryTenant;
             string aadClientAppId = ClientConfiguration.Default.ActiveDirectoryClientAppId;
             string aadResource = ClientConfiguration.Default.ActiveDirectoryResource;
 
             AuthenticationContext authenticationContext = new AuthenticationContext(aadTenant);
+            AuthenticationResult authenticationResult;
 
-            // OAuth through username and password.
-            string username = ClientConfiguration.Default.UserName;
-            string password = ClientConfiguration.Default.Password;
+            if (useWebAppAuthentication)
+            {
+                string aadClientAppSecret = ClientConfiguration.Default.ActiveDirectoryClientAppSecret;
+                var creadential = new ClientCredential(aadClientAppId, aadClientAppSecret);
+                authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, creadential).Result;
+            }
+            else
+            {
+                // OAuth through username and password.
+                string username = ClientConfiguration.Default.UserName;
+                string password = ClientConfiguration.Default.Password;
 
-            // Get token object
-            var userCredential = new UserPasswordCredential(username, password);
-            AuthenticationResult authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, aadClientAppId, userCredential).Result;
+                // Get token object
+                var userCredential = new UserPasswordCredential(username, password);
+                authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, aadClientAppId, userCredential).Result;
+            }
 
             // Create and get JWT token
             return authenticationResult.CreateAuthorizationHeader();
