@@ -77,5 +77,21 @@ namespace ODataConsoleApplication
                 Console.WriteLine("Vendor with ID {0} retrived.", vendor.VendorAccountNumber);
             }
         }
+
+        public static void ExpandNavigationalProperty(Resources d365Client)
+        {            
+            var salesOrdersWithLines = d365Client.SalesOrderHeaders.Expand("SalesOrderLine").Where(x => x.SalesOrderNumber == "012518").Take(5);
+
+            foreach(var salesOrder in salesOrdersWithLines)
+            {
+                Console.WriteLine(string.Format("Sales order ID is {0}", salesOrder.SalesOrderNumber));
+
+                foreach( var salesLine in salesOrder.SalesOrderLine)
+                {
+                    Console.WriteLine(string.Format("Sales order line with description {0} contains item id {1}", salesLine.LineDescription, salesLine.ItemNumber));
+                }
+                
+            }
+        }
     }
 }

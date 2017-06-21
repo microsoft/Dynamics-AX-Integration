@@ -21,9 +21,10 @@ namespace ODataConsoleApplication
                 e.RequestMessage.SetHeader(OAuthHelper.OAuthHeader, authenticationHeader);
             });
 
+            // Uncomment below to run specific examples
 
             // 1. Simple query examples
-            
+
             QueryExamples.ReadLegalEntities(context);
             // QueryExamples.GetInlineQueryCount(context);
             // QueryExamples.GetTopRecords(context);
@@ -31,6 +32,7 @@ namespace ODataConsoleApplication
             // QueryExamples.FilterLinqSyntax(context);
             // QueryExamples.SortSyntax(context);
             // QueryExamples.FilterByCompany(context);
+            // QueryExamples.ExpandNavigationalProperty(context);
 
             // 2. Simple CRUD examples
 
