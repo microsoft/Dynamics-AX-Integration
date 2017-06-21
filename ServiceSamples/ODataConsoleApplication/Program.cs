@@ -33,6 +33,7 @@ namespace ODataConsoleApplication
             // QueryExamples.SortSyntax(context);
             // QueryExamples.FilterByCompany(context);
             // QueryExamples.ExpandNavigationalProperty(context);
+            
 
             // 2. Simple CRUD examples
 

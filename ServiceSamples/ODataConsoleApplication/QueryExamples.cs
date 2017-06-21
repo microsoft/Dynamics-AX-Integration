@@ -80,7 +80,7 @@ namespace ODataConsoleApplication
 
         public static void ExpandNavigationalProperty(Resources d365Client)
         {            
-            var salesOrdersWithLines = d365Client.SalesOrderHeaders.Expand("SalesOrderLine").Where(x => x.SalesOrderNumber == "012518").Take(5);
+            var salesOrdersWithLines = d365Client.SalesOrderHeaders.Expand("SalesOrderLine").Where(x => x.SalesOrderNumber == "012518" ).Take(5);
 
             foreach(var salesOrder in salesOrdersWithLines)
             {
@@ -89,9 +89,19 @@ namespace ODataConsoleApplication
                 foreach( var salesLine in salesOrder.SalesOrderLine)
                 {
                     Console.WriteLine(string.Format("Sales order line with description {0} contains item id {1}", salesLine.LineDescription, salesLine.ItemNumber));
-                }
-                
+                }                
             }
         }
+
+        public static void FilterOnNavigationalProperty(Resources d365Client)
+        {
+            var salesOrderLines = d365Client.SalesOrderLines.Where(x => x.SalesOrderHeader.SalesOrderStatus == SalesStatus.Invoiced);
+
+            foreach (var salesOrderLine in salesOrderLines)
+            {
+                Console.WriteLine(salesOrderLine.ItemNumber);
+            }          
+
+        }       
     }
 }
