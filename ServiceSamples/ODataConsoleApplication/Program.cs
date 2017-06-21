@@ -25,13 +25,16 @@ namespace ODataConsoleApplication
             // 1. Simple query examples
             
             QueryExamples.ReadLegalEntities(context);
-
             // QueryExamples.GetInlineQueryCount(context);
             // QueryExamples.GetTopRecords(context);
             // QueryExamples.FilterSyntax(context);
             // QueryExamples.FilterLinqSyntax(context);
             // QueryExamples.SortSyntax(context);
             // QueryExamples.FilterByCompany(context);
+
+            // 2. Simple CRUD examples
+
+            // SimpleCRUDExamples.SimpleCRUD(context);
 
             // 2. Changeset examples
 
