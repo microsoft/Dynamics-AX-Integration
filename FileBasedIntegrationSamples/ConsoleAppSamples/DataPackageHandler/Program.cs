@@ -21,8 +21,9 @@ namespace DataPackageHandler
             });
 
             PackageImporter.ImportPackage(d365Client, @"..\debug\SampleData\usmf_asset-major-types-01.zip");
+            PackageExporter.ExportPackage(d365Client, @"..\debug\SampleData\");
 
-            Console.WriteLine("Press enter to quit...");
+            Console.WriteLine("Press enter to exit...");
             Console.ReadLine();
         }        
     }
