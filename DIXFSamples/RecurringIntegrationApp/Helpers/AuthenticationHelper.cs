@@ -28,11 +28,14 @@ namespace RecurringIntegrationApp
 
                     AuthenticationContext authenticationContext = new AuthenticationContext(uri.ToString());
 
-                    UserCredential userCred = new UserCredential(ConfigurationManager.AppSettings["User"], ConfigurationManager.AppSettings["Password"]);
+                    string aadClientAppSecret = "Client Secret from Azure App registration";
 
-                    AuthenticationResult = authenticationContext.AcquireToken(ConfigurationManager.AppSettings["Rainier Uri"], ConfigurationManager.AppSettings["Azure Client Id"], userCred);
+                    var credential = new ClientCredential("Application Id from Azure App registration", aadClientAppSecret);
 
-                    authorizationHeader = AuthenticationResult.CreateAuthorizationHeader();
+                    AuthenticationResult authenticationResult = authenticationContext.AcquireTokenAsync("Dynamics 365 for operations URL", credential).Result;
+
+                    return authenticationResult.CreateAuthorizationHeader();
+
                 }
 
                 return authorizationHeader;
