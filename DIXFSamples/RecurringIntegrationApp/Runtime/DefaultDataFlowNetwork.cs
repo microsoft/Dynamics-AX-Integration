@@ -189,11 +189,11 @@ namespace RecurringIntegrationApp
                 if (jobStatusDetail != null)
                 {
                     // post process the status received
-                    var postProcessSucceeded = await postProcessMessageAsync(jobStatusDetail, item.Value);
+                    var postProcessFinished= await postProcessMessageAsync(jobStatusDetail, item.Value);
 
                     // If the status received is any of the completion state (any of the error state or processed state)
                     // the treat processing to be complete and remove the item from the tracked dictionary
-                    if (postProcessSucceeded)
+                    if (postProcessFinished)
                     {
                         ClientDataMessage _removed;
 
@@ -328,7 +328,7 @@ namespace RecurringIntegrationApp
         /// </summary>
         /// <param name="jobStatusDetail">DataJobStatusDetail object</param>
         /// <param name="fileName">Name of the file whose status is being processed</param>
-        /// <returns>Is post processing successful or not</returns>
+        /// <returns>Is post processing finished (successful or not)</returns>
         private async Task<bool> postProcessMessageAsync(DataJobStatusDetail jobStatusDetail, 
             ClientDataMessage dataMessage)
         {
@@ -372,7 +372,9 @@ namespace RecurringIntegrationApp
 
                         await this.moveDataToTargetAsync(dataMessage, targetDataMessage);
 
-                        await this.updateStatsAsync(jobStatusDetail, StatType.Failure, targetDataMessage);                        
+                        await this.updateStatsAsync(jobStatusDetail, StatType.Failure, targetDataMessage);
+                        
+                        retVal = true;
                     }
                     break;
             }
