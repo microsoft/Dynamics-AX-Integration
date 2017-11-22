@@ -3,6 +3,7 @@ using Microsoft.OData.Client;
 using ODataUtility.Microsoft.Dynamics.DataEntities;
 using System;
 using System.Linq;
+using System.Net;
 
 namespace ODataConsoleApplication
 {
@@ -12,6 +13,14 @@ namespace ODataConsoleApplication
 
         static void Main(string[] args)
         {
+            /* When making service requets to Sandbox or Prod AX environemnts it must be ensured that TLS version is 1.2
+             * .NET 4.5 supports TLS 1.2 but it is not the default protocol. The below statement can set TLS version explicity.
+             * Note that this statement may not work in .NET 4.0, 3.0 or below.
+             * Also note that in .NET 4.6 and above TLS 1.2 is the default protocol.
+             */
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             // To test custom entities, regenerate "ODataClient.tt" file.
             // https://blogs.msdn.microsoft.com/odatateam/2014/03/11/tutorial-sample-how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class/
 
