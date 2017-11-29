@@ -14,13 +14,20 @@ namespace AuthenticationUtility
         {
             UriString = "https://usnconeboxax1aos.cloud.onebox.dynamics.com/",
             UserName = "tusr1@TAEOfficial.ccsctp.net",
-            Password = "PASSWORD",
+            Password = "Dynamic5Passw0rd",
+
             ActiveDirectoryResource = "https://usnconeboxax1aos.cloud.onebox.dynamics.com",
-            ActiveDirectoryTenant = "https://login.windows-ppe.net/TAEOfficial.ccsctp.net",
+            ActiveDirectoryTenant = "https://sts.windows-ppe.net/TAEOfficial.ccsctp.net",
             ActiveDirectoryClientAppId = "d8a9a121-b463-41f6-a86c-041272bdb340",
             ActiveDirectoryClientAppSecret = "",
+
+            // Change TLS version of HTTP request from client here
+            // Ex: TLSVersionOfHTTPRequest = "1.2"
+            // Leave it empty if want to use default version
+            TLSVersion = "",
         };
 
+        public string TLSVersion { get; set; }
         public string UriString { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }

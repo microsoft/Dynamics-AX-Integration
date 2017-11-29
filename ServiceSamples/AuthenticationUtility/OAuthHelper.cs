@@ -22,16 +22,31 @@ namespace AuthenticationUtility
         {
             string aadTenant = ClientConfiguration.Default.ActiveDirectoryTenant;
             string aadClientAppId = ClientConfiguration.Default.ActiveDirectoryClientAppId;
+            string aadClientAppSecret = ClientConfiguration.Default.ActiveDirectoryClientAppSecret;
             string aadResource = ClientConfiguration.Default.ActiveDirectoryResource;
 
-            AuthenticationContext authenticationContext = new AuthenticationContext(aadTenant);
+            AuthenticationContext authenticationContext = new AuthenticationContext(aadTenant, false);
             AuthenticationResult authenticationResult;
 
-            if (useWebAppAuthentication)
+            if (!string.IsNullOrEmpty(aadClientAppSecret) || useWebAppAuthentication)
             {
-                string aadClientAppSecret = ClientConfiguration.Default.ActiveDirectoryClientAppSecret;
-                var creadential = new ClientCredential(aadClientAppId, aadClientAppSecret);
-                authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, creadential).Result;
+                if (string.IsNullOrEmpty(aadClientAppSecret))
+                {
+                    Console.WriteLine("Please fill AAD application secret in ClientConfiguration if you choose authentication by the application.");
+                    throw new Exception("Failed OAuth by empty application secret");
+                }
+
+                try
+                {
+                    // OAuth through application by application id and application secret.
+                    var creadential = new ClientCredential(aadClientAppId, aadClientAppSecret);
+                    authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, creadential).Result;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(string.Format("Failed to authenticate with AAD by application with exception {0} and the stack trace {1}", ex.ToString(), ex.StackTrace));
+                    throw new Exception("Failed to authenticate with AAD by application.");
+                }
             }
             else
             {
@@ -39,9 +54,18 @@ namespace AuthenticationUtility
                 string username = ClientConfiguration.Default.UserName;
                 string password = ClientConfiguration.Default.Password;
 
-                // Get token object
-                var userCredential = new UserPasswordCredential(username, password);
-                authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, aadClientAppId, userCredential).Result;
+                try
+                {
+                    // Get token object
+                    var userCredential = new UserPasswordCredential(username, password); ;
+                    authenticationResult = authenticationContext.AcquireTokenAsync(aadResource, aadClientAppId, userCredential).Result;
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(string.Format("Failed to authenticate with AAD by username/password with exception {0} and the stack trace {1}", ex.ToString(), ex.StackTrace));
+                    throw new Exception("Failed to authenticate with AAD by username/password.");
+                }
             }
 
             // Create and get JWT token
