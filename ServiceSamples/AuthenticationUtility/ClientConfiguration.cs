@@ -13,8 +13,9 @@ namespace AuthenticationUtility
         public static ClientConfiguration OneBox = new ClientConfiguration()
         {
             UriString = "https://usnconeboxax1aos.cloud.onebox.dynamics.com/",
-            UserName = "tusr1@TAEOfficial.ccsctp.net",
-            Password = "Dynamic5Passw0rd",
+            UserName = "tusr1@TAEOfficial.ccsctp.net",            
+            // Insert the correct password here for actual tests.
+            Password = "",
 
             ActiveDirectoryResource = "https://usnconeboxax1aos.cloud.onebox.dynamics.com",
             ActiveDirectoryTenant = "https://sts.windows-ppe.net/TAEOfficial.ccsctp.net",
