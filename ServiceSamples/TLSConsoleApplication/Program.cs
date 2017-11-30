@@ -1,4 +1,4 @@
-﻿using AuthenticationUtility;
+using AuthenticationUtility;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,15 +14,15 @@ namespace OAuthXppConsoleApplication
     class Program
     {
         public static string sessionUrl = "/api/services/UserSessionService/AifUserSessionService/GetUserSessionInfo";
-        
+
         static void Main(string[] args)
         {
             string GetUserSessionOperationPath = string.Format("{0}{1}", ClientConfiguration.Default.UriString.TrimEnd('/'), sessionUrl);
-            
+
             try
             {
                 // Creates an HttpWebRequest for user session URL
-                HttpWebRequest aadRequest = (HttpWebRequest) WebRequest.Create(GetUserSessionOperationPath);
+                HttpWebRequest aadRequest = (HttpWebRequest)WebRequest.Create(GetUserSessionOperationPath);
 
                 // Change TLS version of HTTP request if the TLS version value is defined in ClientConfiguration
                 if (!string.IsNullOrWhiteSpace(ClientConfiguration.OneBox.TLSVersion))
@@ -30,15 +30,15 @@ namespace OAuthXppConsoleApplication
                     aadRequest.ProtocolVersion = Version.Parse(ClientConfiguration.OneBox.TLSVersion);
                 }
 
-                string tlsRequestVersion = aadRequest.ProtocolVersion.ToString();                
+                string tlsRequestVersion = aadRequest.ProtocolVersion.ToString();
                 Console.WriteLine("The TLS protocol version for the HTTP request is {0}.", tlsRequestVersion);
-                
+
                 aadRequest.Headers[OAuthHelper.OAuthHeader] = OAuthHelper.GetAuthenticationHeader();
                 aadRequest.Method = "POST";
                 aadRequest.ContentLength = 0;
 
                 // Get HttpWebResponse for the response
-                var aadResponse = (HttpWebResponse) aadRequest.GetResponse();
+                var aadResponse = (HttpWebResponse)aadRequest.GetResponse();
 
                 string tlsResponseVersion = aadResponse.ProtocolVersion.ToString();
                 Console.WriteLine("The TLS protocol version of the server response is {0}.", tlsResponseVersion);
@@ -46,7 +46,6 @@ namespace OAuthXppConsoleApplication
                 if (aadResponse.StatusCode != HttpStatusCode.OK)
                 {
                     Console.WriteLine("Could not get response from the server.");
-                    Console.ReadLine();
                     return;
                 }
 
@@ -59,20 +58,19 @@ namespace OAuthXppConsoleApplication
 
                         Console.WriteLine(string.Format("Request sent using version {0}. Successfully received response with version {1}.", tlsRequestVersion, tlsResponseVersion));
 
-                        Console.WriteLine(string.Format("\nResponse string: {0}.", responseString));                        
+                        Console.WriteLine(string.Format("\nResponse string: {0}.", responseString));
                     }
                 }
-                
+
                 // Releases the resources of the response.
                 aadResponse.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Failed to authenticate to AAD with the exception: {0} and stack trace: {1}.", ex.ToString(), ex.StackTrace);
-                Console.ReadLine();
                 throw new Exception("Failed to authenticate to AAD.");
             }
-            
+
             Console.ReadLine();
         }
 
