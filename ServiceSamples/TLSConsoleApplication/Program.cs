@@ -1,4 +1,4 @@
-using AuthenticationUtility;
+﻿using AuthenticationUtility;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,7 +21,7 @@ namespace OAuthXppConsoleApplication
 
             try
             {
-                // Creates an HttpWebRequest for user session URL
+                // Creates an HttpWebRequest for user session URL.
                 HttpWebRequest aadRequest = (HttpWebRequest)WebRequest.Create(GetUserSessionOperationPath);
 
                 // Change TLS version of HTTP request if the TLS version value is defined in ClientConfiguration
