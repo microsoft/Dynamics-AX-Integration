@@ -56,7 +56,6 @@ namespace AuthenticationUtility
 
                 if (string.IsNullOrEmpty(password))
                 {
-
                     Console.WriteLine("Please fill user password in ClientConfiguration if you choose authentication by the credentials.");
                     throw new Exception("Failed OAuth by empty password.");
                 }
