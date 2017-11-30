@@ -56,7 +56,7 @@ namespace AuthenticationUtility
 
                 if (string.IsNullOrEmpty(password))
                 {
-                    Console.WriteLine("Please fill user password in ClientConfiguration if you choose authentication by the credentials.");
+                    Console.WriteLine("Please fill user password in ClientConfiguration if you choose authentication by the credential.");
                     throw new Exception("Failed OAuth by empty password.");
                 }
 
@@ -68,8 +68,8 @@ namespace AuthenticationUtility
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(string.Format("Failed to authenticate with AAD by username/password with exception {0} and the stack trace {1}", ex.ToString(), ex.StackTrace));
-                    throw new Exception("Failed to authenticate with AAD by username/password.");
+                    Console.WriteLine(string.Format("Failed to authenticate with AAD by the credential with exception {0} and the stack trace {1}", ex.ToString(), ex.StackTrace));
+                    throw new Exception("Failed to authenticate with AAD by the credential.");
                 }
             }
 
