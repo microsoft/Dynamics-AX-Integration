@@ -1,4 +1,4 @@
-﻿using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace AuthenticationUtility
     public class OAuthHelper
     {
         /// <summary>
-        /// The header to use for OAuth.
+        /// The header to use for OAuth authentication.
         /// </summary>
         public const string OAuthHeader = "Authorization";
 
@@ -28,12 +28,12 @@ namespace AuthenticationUtility
             AuthenticationContext authenticationContext = new AuthenticationContext(aadTenant, false);
             AuthenticationResult authenticationResult;
 
-            if (!string.IsNullOrEmpty(aadClientAppSecret) || useWebAppAuthentication)
+            if (useWebAppAuthentication)
             {
                 if (string.IsNullOrEmpty(aadClientAppSecret))
                 {
                     Console.WriteLine("Please fill AAD application secret in ClientConfiguration if you choose authentication by the application.");
-                    throw new Exception("Failed OAuth by empty application secret");
+                    throw new Exception("Failed OAuth by empty application secret.");
                 }
 
                 try
@@ -54,6 +54,13 @@ namespace AuthenticationUtility
                 string username = ClientConfiguration.Default.UserName;
                 string password = ClientConfiguration.Default.Password;
 
+                if (string.IsNullOrEmpty(password))
+                {
+
+                    Console.WriteLine("Please fill user password in ClientConfiguration if you choose authentication by the credentials.");
+                    throw new Exception("Failed OAuth by empty password.");
+                }
+
                 try
                 {
                     // Get token object
@@ -62,7 +69,6 @@ namespace AuthenticationUtility
                 }
                 catch (Exception ex)
                 {
-
                     Console.WriteLine(string.Format("Failed to authenticate with AAD by username/password with exception {0} and the stack trace {1}", ex.ToString(), ex.StackTrace));
                     throw new Exception("Failed to authenticate with AAD by username/password.");
                 }
