@@ -22,7 +22,7 @@ namespace OAuthXppConsoleApplication
             try
             {
                 // Creates an HttpWebRequest for user session URL.
-                HttpWebRequest aadRequest = (HttpWebRequest)WebRequest.Create(GetUserSessionOperationPath);
+                HttpWebRequest aadRequest = (HttpWebRequest) WebRequest.Create(GetUserSessionOperationPath);
 
                 // Change TLS version of HTTP request if the TLS version value is defined in ClientConfiguration
                 if (!string.IsNullOrWhiteSpace(ClientConfiguration.OneBox.TLSVersion))
@@ -38,7 +38,7 @@ namespace OAuthXppConsoleApplication
                 aadRequest.ContentLength = 0;
 
                 // Get HttpWebResponse for the response
-                var aadResponse = (HttpWebResponse)aadRequest.GetResponse();
+                var aadResponse = (HttpWebResponse) aadRequest.GetResponse();
 
                 string tlsResponseVersion = aadResponse.ProtocolVersion.ToString();
                 Console.WriteLine("The TLS protocol version of the server response is {0}.", tlsResponseVersion);
@@ -55,10 +55,8 @@ namespace OAuthXppConsoleApplication
                     using (StreamReader streamReader = new StreamReader(responseStream))
                     {
                         string responseString = streamReader.ReadToEnd();
-
-                        Console.WriteLine(string.Format("Request sent using version {0}. Successfully received response with version {1}.", tlsRequestVersion, tlsResponseVersion));
-
-                        Console.WriteLine(string.Format("\nResponse string: {0}.", responseString));
+                        
+                        Console.WriteLine(string.Format("\nSuccessfully received response.\nResponse string: {0}.", responseString));
                     }
                 }
 
@@ -67,8 +65,8 @@ namespace OAuthXppConsoleApplication
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Failed to authenticate to AAD with the exception: {0} and stack trace: {1}.", ex.ToString(), ex.StackTrace);
-                throw new Exception("Failed to authenticate to AAD.");
+                Console.WriteLine("Failed with the exception: {0} and stack trace: {1}.", ex.ToString(), ex.StackTrace);
+                throw new Exception(ex.Message);
             }
 
             Console.ReadLine();
