@@ -75,7 +75,7 @@ namespace ODataConsoleApplication
                 salesOrderLine.DataAreaId = "USMF";
 
                 context.SaveChanges(SaveChangesOptions.PostOnlySetProperties | SaveChangesOptions.BatchWithIndependentOperations); // The changes within the branch are treated as independent operation. Failure in one will not roll back others.
-                Console.WriteLine(string.Format("Invoice {0} - Save Failed !", salesOrderNumber));
+                Console.WriteLine(string.Format("Invoice {0} - Saved !", salesOrderNumber));
             }
             catch (DataServiceRequestException e)
             {
