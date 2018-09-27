@@ -7,6 +7,12 @@ public static class Configuration
     // ### Notice ### If the OData service requires authentication for accessing the metadata document, the value of
     // MetadataDocumentUri has to be set to a local file path, or the client code generation process will fail.
 	public const string MetadataDocumentUri = "https://retail1611pu6c4dd29587c42e289devaos.cloudax.dynamics.com/data/$metadata";
+	
+	// If you would like to save the defintion to the local project folder and avoid having to specify an absolute path
+	// simply set MetadataDocumentUri to null, and amend ProjectRelativeMetadataDocumentUri to hold the relative path
+	// to your metadata file. This is then resolved using Host.ResolvePath (see https://docs.microsoft.com/en-gb/visualstudio/modeling/t4-template-directive?view=vs-2015#hostspecific-attribute).
+	// If MetadataDocumentUri is not null, this value is ignored.
+	public const string ProjectRelativeMetadataDocumentUri = "metadata.xml"; 
 
 	// The use of DataServiceCollection enables entity and property tracking. The value must be set to true or false.
 	public const bool UseDataServiceCollection = true;
