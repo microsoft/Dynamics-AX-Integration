@@ -4,7 +4,7 @@
 	
 	class PHPExamples
 	{
-		// Constructs a Http GET request to a feed passed in as paremeter.
+		// Constructs a Http GET request to a feed passed in as parameter.
 		// Returns the json decoded respone as the objects that were recieved in feed.
 		public static function getProducts(){
 			// initialize curl which is used to make the http request.
