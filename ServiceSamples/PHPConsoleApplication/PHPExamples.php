@@ -7,7 +7,7 @@
 		// Constructs a Http GET request to a feed passed in as paremeter.
 		// Returns the json decoded respone as the objects that were recieved in feed.
 		public static function getProducts(){
-			// initiaze curl which is used to make the http request.
+			// initialize curl which is used to make the http request.
 			$ch = curl_init();
 			// Add authorization and other headers. Also set some common settings.
 			AXAccessHelper::AddRequiredHeadersAndSettings($ch);
@@ -26,7 +26,7 @@
 		}
 		
 		public static function getInventory(){
-			// initiaze curl which is used to make the http request.
+			// initialize curl which is used to make the http request.
 			$ch = curl_init();
 			// Add authorization and other headers. Also set some common settings.
 			AXAccessHelper::AddRequiredHeadersAndSettings($ch);
@@ -45,7 +45,7 @@
 		}
 		
 		public static function getUserSessionInfo(){
-			// initiaze curl which is used to make the http request.
+			// initialize curl which is used to make the http request.
 			$ch = curl_init();
 			// Add authorization and other headers. Also set some common settings.
 			AXAccessHelper::AddRequiredHeadersAndSettings($ch);
@@ -65,7 +65,7 @@
 		
 		public static function setTimeZone(){
 			date_default_timezone_set('UTC');
-			// initiaze curl which is used to make the http request.
+			// initialize curl which is used to make the http request.
 			$ch = curl_init();
 			
 			$applyTimeZoneContract = array(
