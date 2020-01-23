@@ -3,6 +3,7 @@ using Microsoft.OData.Client;
 using ODataUtility.Microsoft.Dynamics.DataEntities;
 using System;
 using System.Linq;
+using System.Net;
 
 namespace ODataConsoleApplication
 {
@@ -12,6 +13,9 @@ namespace ODataConsoleApplication
 
         static void Main(string[] args)
         {
+            // https://github.com/Microsoft/Dynamics-AX-Integration/issues/45
+            ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol | SecurityProtocolType.Tls12;
+
             // To test custom entities, regenerate "ODataClient.tt" file.
             // https://blogs.msdn.microsoft.com/odatateam/2014/03/11/tutorial-sample-how-to-use-odata-client-code-generator-to-generate-client-side-proxy-class/
 
