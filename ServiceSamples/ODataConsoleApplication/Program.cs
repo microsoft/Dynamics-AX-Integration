@@ -2,7 +2,6 @@
 using Microsoft.OData.Client;
 using ODataUtility.Microsoft.Dynamics.DataEntities;
 using System;
-using System.Linq;
 
 namespace ODataConsoleApplication
 {
@@ -17,12 +16,15 @@ namespace ODataConsoleApplication
 
             Uri oDataUri = new Uri(ODataEntityPath, UriKind.Absolute);
             var context = new Resources(oDataUri);
-
+            DateTimeOffset _expirationToken = DateTime.UtcNow;
+            var authenticationHeader = "";
             context.SendingRequest2 += new EventHandler<SendingRequest2EventArgs>(delegate (object sender, SendingRequest2EventArgs e)
-            {
-                var authenticationHeader = OAuthHelper.GetAuthenticationHeader(useWebAppAuthentication: true);
-                e.RequestMessage.SetHeader(OAuthHelper.OAuthHeader, authenticationHeader);
-            });
+                {
+                    
+                    if (!IsValidToken()) //Auto refresh token
+                        authenticationHeader = OAuthHelper.GetAuthenticationHeader(SetTokenExpirationDateTime, useWebAppAuthentication: true);
+                    e.RequestMessage.SetHeader(OAuthHelper.OAuthHeader, authenticationHeader);
+                });
 
             // Uncomment below to run specific examples
 
@@ -36,7 +38,7 @@ namespace ODataConsoleApplication
             // QueryExamples.SortSyntax(context);
             // QueryExamples.FilterByCompany(context);
             // QueryExamples.ExpandNavigationalProperty(context);
-            
+
 
             // 2. Simple CRUD examples
 
@@ -48,8 +50,19 @@ namespace ODataConsoleApplication
             // ODataChangesetsExample.CreateSalesOrderWithoutChangeset(context);
 
             Console.ReadLine();
-        }
 
-       
+            DateTimeOffset SetTokenExpirationDateTime(DateTimeOffset datahoraexpiracao)
+            {
+                _expirationToken = datahoraexpiracao;
+
+                return datahoraexpiracao;
+            }
+
+            bool IsValidToken()
+            {
+                return _expirationToken > DateTime.UtcNow;
+            }
+
+        }
     }
 }
