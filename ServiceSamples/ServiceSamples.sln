@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleApplications", "ConsoleApplications", "{D09E6460-3148-4A92-8D6A-2C478E119F0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTests", "ServiceTests\ServiceTests.csproj", "{303C953C-3897-4FDC-9337-8190BE98C133}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataConsoleApplication", "ODataConsoleApplication\ODataConsoleApplication.csproj", "{FF60AD7E-F293-466A-8240-738101377621}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapConsoleApplication", "SoapConsoleApplication\SoapConsoleApplication.csproj", "{71CAD5F3-B055-4BDC-A77F-5B5009E9D7C3}"
@@ -20,10 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ODataUtility", "ODataUtility\ODataUtility.csproj", "{74D74B3E-9B32-4E5D-9639-80988F58696C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonConsoleApplication", "JsonConsoleApplication\JsonConsoleApplication.csproj", "{003F5F9E-658D-4C90-B185-6726A5CF41FC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHPConsoleApplication", "PHPConsoleApplication\PHPConsoleApplication.csproj", "{154E69A6-FD19-4280-A621-B1457B6FE30C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLSConsoleApplication", "TLSConsoleApplication\TLSConsoleApplication.csproj", "{0EDB6F35-1BA6-4C98-8709-49989DF7F2A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +33,6 @@ Global
 		{1DBAB883-BAB6-4433-8EAB-6E197634F158}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DBAB883-BAB6-4433-8EAB-6E197634F158}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DBAB883-BAB6-4433-8EAB-6E197634F158}.Release|Any CPU.Build.0 = Release|Any CPU
-		{303C953C-3897-4FDC-9337-8190BE98C133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{303C953C-3897-4FDC-9337-8190BE98C133}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{303C953C-3897-4FDC-9337-8190BE98C133}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{303C953C-3897-4FDC-9337-8190BE98C133}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF60AD7E-F293-466A-8240-738101377621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF60AD7E-F293-466A-8240-738101377621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF60AD7E-F293-466A-8240-738101377621}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,14 +49,6 @@ Global
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{154E69A6-FD19-4280-A621-B1457B6FE30C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{154E69A6-FD19-4280-A621-B1457B6FE30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{154E69A6-FD19-4280-A621-B1457B6FE30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{154E69A6-FD19-4280-A621-B1457B6FE30C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EDB6F35-1BA6-4C98-8709-49989DF7F2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EDB6F35-1BA6-4C98-8709-49989DF7F2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EDB6F35-1BA6-4C98-8709-49989DF7F2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EDB6F35-1BA6-4C98-8709-49989DF7F2A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,7 +60,5 @@ Global
 		{71CAD5F3-B055-4BDC-A77F-5B5009E9D7C3} = {D09E6460-3148-4A92-8D6A-2C478E119F0E}
 		{74D74B3E-9B32-4E5D-9639-80988F58696C} = {8B249783-ED3B-4990-BF1E-7C163B3670E0}
 		{003F5F9E-658D-4C90-B185-6726A5CF41FC} = {D09E6460-3148-4A92-8D6A-2C478E119F0E}
-		{154E69A6-FD19-4280-A621-B1457B6FE30C} = {D09E6460-3148-4A92-8D6A-2C478E119F0E}
-		{0EDB6F35-1BA6-4C98-8709-49989DF7F2A8} = {D09E6460-3148-4A92-8D6A-2C478E119F0E}
 	EndGlobalSection
 EndGlobal
