@@ -311,7 +311,7 @@ public void ValidateAndSetIgnoreUnexpectedElementsAndAttributesFromString(string
 /// </summary>
 private void ApplyParametersFromConfigurationClass()
 {
-    this.MetadataDocumentUri = Configuration.MetadataDocumentUri;
+	this.MetadataDocumentUri = Configuration.MetadataDocumentUri ?? Host.ResolvePath(Configuration.ProjectRelativeMetadataDocumentUri);
     this.NamespacePrefix = Configuration.NamespacePrefix;
     this.UseDataServiceCollection = Configuration.UseDataServiceCollection;
     this.ValidateAndSetTargetLanguageFromString(Configuration.TargetLanguage);
